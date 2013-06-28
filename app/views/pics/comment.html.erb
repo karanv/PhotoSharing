@@ -1,0 +1,20 @@
+<%if (session[:logged_in]!=nil)%>
+<h2>Add a new comment</h2>
+
+<table>
+	<tr>
+		<td class = "element">
+			<img class ="images" src="/images/<%=@photo.file_name%>" alt = "<%=@photo.file_name%>"/>							
+			<h5> Created: <%=@photo.date_time%> </h5>
+		</td>
+		 <td>
+			<%=render 'comment_form'%>
+		</td>
+	</tr>
+</table>
+
+<%else%>
+
+<h2>Haha, good try but I'm not loosing marks here. Please login : )</h2>
+
+<%end%>

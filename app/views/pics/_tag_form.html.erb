@@ -1,0 +1,17 @@
+<% if flash[:notice] %>
+ 		<%= flash[:notice] %>
+		<br />
+		<br />
+<% end %>
+
+<%= form_for(:tag, :url => {:action => "post_tag"}, :html =>{:id => "myform"}) do |tag_form| %>
+	<div>
+		<%= tag_form.hidden_field "photo_id"%>
+		<%= tag_form.hidden_field "tagger_id", :value => session[:logged_in]%>
+		<%= tag_form.hidden_field "user_id"%>
+		<%= tag_form.hidden_field "x_coord"%>
+		<%= tag_form.hidden_field "y_coord"%>
+		<%= tag_form.hidden_field "width"%>
+		<%= tag_form.hidden_field "height"%>
+	</div>
+<% end %>

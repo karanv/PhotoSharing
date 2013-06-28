@@ -1,0 +1,9 @@
+<%if (session[:logged_in]!=nil)%>
+<h2>Upload a new photograph</h2>
+
+<%=render 'photo_form'%>
+
+<%else%>
+
+<h2> No Noo Nooo ; ) first log yourself in </h2>
+<%end%>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title>Project 6, P2</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+		<div class = "login">
+			<a id = "leftlogin" href = "/pics/users/"> __Home__ |</a>
+			<% if(session[:logged_in]!= nil)%>
+				<%loggedUser = User.find(session[:logged_in])%>
+				<a href = "/pics/user/<%=loggedUser.id%>">__Hi <%=loggedUser.first_name%>!__</a>
+				|<a href = "/user/logout">__Logout__</a>
+			<%else%>
+				<a href="/user/login">Login</a>
+			<%end%>
+		</div>
+		
+        <div id="header">
+	    <h1> Artists that I <span id = "love">love</span> </h1> 
+	    <a href="http://www.youtube.com/watch?v=yAsDLGjMhFI" > <img class = "beethoven" 			src="http://tinyurl.com/5ttlqom" alt = "Beethoven"/> </a>
+            <a href="http://www.youtube.com/watch?v=mNwfae19It4" > <img class = "MJ" src="http://tinyurl.com/7l9l8g4" alt = "Michael Jackson"/> </a> 
+            <a href="http://www.youtube.com/watch?v=hO2wA0Te0wM" > 
+               <img class = "EMINEM" src="http://tinyurl.com/7vzo2s8" alt = "Eminem"/> </a> 
+            <a href="http://www.youtube.com/watch?v=fregObNcHC8" > <img class = "Nirvana" src="http://tinyurl.com/7tocmae" alt="Nirvana"/> </a> 
+	    <a href="http://www.youtube.com/watch?v=22W38jJk81s" > <img class = "Metallica" src="http://tinyurl.com/6nykmzs" alt="Metallica"/> </a> 
+	    <a href="http://www.youtube.com/watch?v=qST5eVLudrQ" > <img class = "Cartman" src="http://tinyurl.com/79gwkmc" alt="Cartman"/> </a> 
+       	    <p> Click on an artist to listen to my favorite song by him</p>
+        </div>
+<%= yield %>
+
+</body>
+</html>

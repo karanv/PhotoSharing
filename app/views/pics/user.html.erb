@@ -1,0 +1,108 @@
+<% if flash[:notice] %>
+ 	<p>	<%= flash[:notice] %>
+		<br />
+		<br /></p>
+<% end %>
+
+<% name = @user.first_name + " " + @user.last_name %>
+<h2> <%= name %> </h2> 
+
+<%if(session[:logged_in] !=nil)%>
+
+<div class="gradient">
+	<a href="/pics/photo"><span></span>+ Photo</a>
+</div>
+<%end%>
+
+<%= render :partial => 'tag_form'%>
+
+<% @photos.each do |photo| %>
+	<% if(photo.user_id == @user.id)%>
+	<table>
+		<tr class="celebtable">
+		  	<td class = "element">
+				
+					<%if(session[:logged_in] !=nil)%>
+						<button type="button" id="button<%=photo.id%>" onclick = "Tag = new Tagger(<%=photo.id%>, 	
+							<%=photo.id%>,<%=photo.id%>,'myform', 'tag_photo_id','tag_user_id','tag_x_coord',
+							'tag_y_coord','tag_width', 'tag_height')">Tag Photo</button>
+
+						<button type = "button" id="cancel<%=photo.id%>" 
+							style = "display:none;"> Cancel Tagging </button>	
+					<%else%>
+						<h4> Log in, if you want to tag pictures </h4>
+						
+					<%end%>
+				<div id = "parent<%=photo.id%>">
+					<div id = "child<%=photo.id%>"></div>
+					<select id = "menu<%=photo.id%>" style="display:none;position:absolute;">
+					  
+							<option value ='0'> Select a User </option>
+					  		<%@users.each do |myUser|%>
+					  		<option value = '<%=myUser.id%>'><%= myUser.first_name + " " + 
+											myUser.last_name %></option>
+					  						<%end%>
+					</select>
+					
+					<a name="<%=photo.id%>"><img id ="image<%=photo.id%>"
+					src="/images/<%=photo.file_name%>" alt = "<%=photo.file_name%>"/></a>
+				<p>
+				 <%=@user.first_name%> with --->
+					<% @tags.each do |tag| %>
+						<% if(tag.photo_id == photo.id)%>
+						 <%if(tag.user_id != photo.user_id)%>
+						 		 <%=tag.user.first_name%> <%=tag.user.last_name%> |
+						  <%@temp = tag%>
+						  <%end%>
+						<%end%>
+					<%end%>
+				</p>
+				<h5> Created: <%=photo.date_time.getlocal %>
+				<%if(@temp !=nil)%>
+					<%@users.each do |userId|%>
+				 		<%if(@temp.tagger_id == userId.id)%>
+							     ,Last tagged by: <%=userId.first_name%> 
+							<%end%>
+					<%end%>
+				<%end%>
+				</h5>
+				<% @tags.each do |tag| %>
+					<% if(tag.photo_id == photo.id)%>
+					<%puts "HAA, now I am inside the tagging thing"%>
+						<div id = "tag<%=tag.id%>" onmouseover = "makeTagVisible(<%=tag.id%>)"
+												   onmouseout = "makeTagInVisible(<%=tag.id%>)">
+						 <p id ="text<%=tag.id%>"></p>										 
+						</div>
+						<script type = "text/javascript">
+							showTags(<%=photo.id%>,<%=tag.id%>,
+							"<%=tag.user.first_name%>  <%=tag.user.last_name%>",
+							<%=tag.x_coord%>,<%=tag.y_coord%>,<%=tag.width%>,<%=tag.height%>)
+						</script>
+					<%end%>
+				<%end%>
+				</div>
+	   	 	</td>
+	
+		    <td class = "element">
+				<%if(photo.comments.size() !=0)%>
+					<p class= "CHeading"> Comments: </p>
+				<%end%>
+				
+				<% photo.comments.each do |comment| %>
+
+				<% thename = comment.user.first_name + " " + comment.user.last_name%> 
+				    <p class = "username"><%= link_to thename, :action => 'user', :id => comment.user.id %></p>	
+	       			        <h6> Created: <%=comment.date_time.getlocal%></h6>
+					<p class = "comments"><%=comment.comment%> </p>
+				<%end%>
+				<p><br/> <br/> <br/></p> 
+				<%if(session[:logged_in] !=nil)%>
+				<div class="gradient1">
+					<a href="/pics/comment/<%=photo.id%>"><span></span> Add New Comment!</a>
+				</div>
+				<%end%>
+			</td>
+		</tr>
+		</table>
+	<%end%>
+<% end %> 

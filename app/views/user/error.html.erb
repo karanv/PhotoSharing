@@ -1,0 +1,10 @@
+<% if @user.errors.any? %>
+  <div id="errorExplanation">
+    <h5><%= pluralize(@user.errors.count, "error") %> prohibited this comment from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>

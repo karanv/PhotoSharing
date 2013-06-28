@@ -1,0 +1,164 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+body {
+   background-image:url('/images/bg.png');
+   background-repeat:repeat;
+}
+
+#leftlogin{
+	text-align: left;
+	color:white;
+}
+
+.square {
+border: 1px solid #FF0000;
+position: absolute;
+}
+
+.login {
+	text-align: right;
+	color: white;
+}
+
+.login a:visited{
+	text-decoration: underline;
+	color: white;
+}
+
+.login a:link{
+	text-decoration: underline;
+	color: white;
+}
+
+#header{
+       
+        background-image: url("/images/music.jpg");
+	background-repeat: no-repeat;
+	width: 1240px;
+	height: 280px;
+	margin: auto;
+}
+
+p {
+   	text-align: center;
+        color: white;
+}
+
+img {
+ 	width: 100%;
+    height: 100%;	
+	border-radius: 1em;
+	box-shadow: 10px 10px 16px #131A1A;
+}
+
+img:hover {
+	   position:relative;
+	   border-radius: 1em;
+	   box-shadow: 10px 10px 16px #131A1A;
+}
+
+h1 {
+   font-family: impact;
+   text-align: center;
+   color: white;
+}
+
+#love {
+   color: #F660AB;
+}
+
+h2 {
+
+	font: 70px Tahoma, Helvetica, Arial, Sans-Serif;
+	text-align: center;
+	color: #222;
+	text-shadow: 0px 2px 3px #555;
+}
+
+.beethoven {
+	position: relative; 
+        width: 14%;
+        height: 180px;
+	top: 0; 
+	left: 0;
+        margin-left: 70px;
+}
+
+.beethoven:hover{
+	position:relative;
+	top: -10px;
+}
+
+.MJ {
+	position: relative;
+        width: 14%;
+        height: 180px;
+}
+
+
+.MJ:hover{
+	position:relative;
+	top: -10px;
+}
+
+.EMINEM {
+        position: relative; 
+        width: 14%;
+        height: 180px; 
+}
+
+
+.EMINEM:hover{
+	position:relative;
+	top: -10px;
+}
+
+.Nirvana {
+        position: relative; 
+        width: 14%;
+        height: 180px; 
+}
+
+
+.Nirvana:hover{
+	position:relative;
+	top: -10px;
+}
+
+.Metallica {
+        position: relative; 
+        width: 14%;
+        height: 180px; 
+}
+
+
+.Metallica:hover{
+	position:relative;
+	top: -10px;
+}
+
+.Cartman {
+        position: relative; 
+        width: 17%;
+        height: 180px; 
+}
+
+
+.Cartman:hover{
+	position:relative;
+	top: -10px;
+}
+
+

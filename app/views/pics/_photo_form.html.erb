@@ -1,0 +1,16 @@
+<% if flash[:notice] %>
+ 		<%= flash[:notice] %>
+		<br />
+		<br />
+<% end %>
+<%= form_for(:thisPhoto, :url => {:action => "post_photo"}, :html => {:multipart => true}) do |photo_form| %>
+ 	<div class="field">
+      <%= photo_form.file_field :picture %>
+  	</div>
+	<!-- <%= photo_form.hidden_field :user_id, :value => session[:logged_in]%>
+	<%= photo_form.hidden_field :date_time, :value => Time.now.utc %> -->
+		
+  	<div class="actions">
+    	<%= submit_tag 'Upload' %>
+  	</div>
+<% end %>

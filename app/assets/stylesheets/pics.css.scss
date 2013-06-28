@@ -1,0 +1,202 @@
+// Place all the styles related to the pics controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#search_string{
+	   background-color: #333333;
+       color:#FFFFFF;
+       border-radius: 2em;
+       padding-left: 10px;
+       padding-right: 10px;
+       margin-bottom: 10px;
+       font-size: 20px;
+	   position: relative;
+	   left: 475px;
+}
+
+.input_boxes{
+	   background-color: #333333;
+       color:#FFFFFF;
+       border-radius: 2em;
+       padding-left: 10px;
+       padding-right: 10px;
+       margin-bottom: 10px;
+       font-size: 20px;
+}
+
+
+.images{
+width: 100%;
+height: 100%;
+}
+
+.element{
+width: 500px;
+padding-right: 100px;
+}
+
+.search:hover{
+  position: relative;
+  top: -20px;
+}
+
+.gradient{
+text-align:right;
+}
+
+/* gradient */
+.gradient a:link {
+	text-decoration:none;
+	color: black;
+	font: bold 310%/100% "Lucida Grande", Arial, sans-serif;
+	font-size: 50px;
+	position: relative;
+	letter-spacing: -2px;
+	text-align: right;
+	margin:50px;
+}
+
+.gradient span {
+	background: url(/images/gradient-glossy.png) repeat;
+	position: absolute;
+	top: 10px;
+	display: block;
+	width: 195px;
+	height:40px;
+	opacity: 0.2;
+}
+
+.gradient a:visited{
+	text-decoration:none;
+	color: black;
+	font: bold 310%/100% "Lucida Grande", Arial, sans-serif;
+	font-size: 50px;
+	position: relative;
+	letter-spacing: -2px;
+	text-align: right;
+	margin:50px;
+}
+
+.gradient a:hover{
+	text-decoration:underline;
+	color: black;
+	font: bold 310%/100% "Lucida Grande", Arial, sans-serif;
+	font-size: 50px;
+	position: relative;
+	letter-spacing: -2px;
+	text-align: right;
+	margin:50px;
+	}
+
+
+
+	/* gradient */
+	.gradient1 a:link {
+		text-decoration:none;
+		color: black;
+		font: bold 310%/100% "Lucida Grande", Arial, sans-serif;
+		font-size: 30px;
+		position: relative;
+		letter-spacing: -2px;
+		text-align: right;
+		margin:50px;
+	}
+
+	.gradient1 span {
+		background: url(/images/gradient-glossy.png) repeat;
+		position: absolute;
+		display: block;
+		left: -10px;
+		text-align: right;
+		width: 295px;
+		height:40px;
+		opacity: 0.2;
+	}
+
+	.gradient1 a:visited{
+		text-decoration:none;
+		color: black;
+		font: bold 310%/100% "Lucida Grande", Arial, sans-serif;
+		font-size: 30px;
+		position: relative;
+		letter-spacing: -2px;
+		text-align: right;
+		margin:50px;
+	}
+
+	.gradient1 a:hover{
+		text-decoration:underline;
+		color: black;
+		font: bold 310%/100% "Lucida Grande", Arial, sans-serif;
+		font-size: 30px;
+		position: relative;
+		letter-spacing: -2px;
+		text-align: right;
+		margin:50px;
+		}
+
+.CHeading{
+ 	font: 30px Tahoma, Helvetica, Arial, Sans-Serif;
+    color: #222;
+    text-align:left;
+	text-shadow: 0px 2px 3px #555;
+}
+
+.username {
+text-align: left;
+}
+.username a:link{
+	text-decoration: none;
+        font: 15px Helvetica, Arial, Sans-Serif;
+        text-align:left;
+        color: #999; text-shadow: 0px 3px 8px #2a2a2a;
+
+}
+
+.username a:hover {
+        text-decoration: none;
+        color: #a0a0a0; text-shadow: 0px 15px 18px #555;
+}
+
+.username a:visited{
+        text-decoration: none;
+        color: #a0a0a0; text-shadow: 0px 5px 8px #555;
+
+}
+.comments {
+ 	width: 500px; margin: 0 auto; background: #222; padding: 20px;
+	font-size: 17px; color: #555; text-shadow: 0px 2px 3px #171717;
+	
+	-webkit-box-shadow: 0px 2px 3px #555;
+	-moz-box-shadow: 0px 2px 3px #555;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+.name {
+ padding: 6px;
+}
+
+.name a:link{
+        text-decoration:none;
+	font: 30px Helvetica, Arial, Sans-Serif; 
+	text-align: center;
+	color: #999; text-shadow: 0px 3px 8px #2a2a2a;
+ }
+
+.name a:hover {
+        text-decoration: none;
+	color: #a0a0a0; text-shadow: 0px 15px 18px #555;
+}
+.name a:visited{
+        text-decoration: none;
+        color: #a0a0a0; text-shadow: 0px 5px 8px #555;
+
+}
+
+.hidden{
+
+	display:none;
+
+}
+

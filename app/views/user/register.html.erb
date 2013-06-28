@@ -1,0 +1,41 @@
+<h2>Register Here</h2>
+
+<div class="register_block">
+<% if flash[:notice] %>
+        <%= flash[:notice]%>
+		<br />
+		<br />
+<% end %>
+
+<%= form_for(:user, :url => {:action => 'post_register'}) do |user_form| %>
+
+  <div class="field">
+    <%= user_form.label :first_name %><br />
+    <%= user_form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= user_form.label :last_name %><br />
+    <%= user_form.text_field :last_name %>
+  </div>
+
+<div class="field">
+    <%= user_form.label :login %><br />
+    <%= user_form.text_field :login %>
+  </div>
+
+<div class="field">
+    <%= user_form.label :password %><br />
+    <%= user_form.password_field :password %>
+  </div>
+
+<div class="field">
+    <%= user_form.label :password_confirmation %><br />
+    <%= user_form.password_field :password_confirmation %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag 'Create User' %>
+  </div>
+<% end %>
+</div>

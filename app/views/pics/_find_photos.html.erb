@@ -1,0 +1,33 @@
+<!--
+# Author: Karan Verma 
+#
+-->
+
+<% content_for :title, "Pics:" %>
+<div>
+<p>  
+<% if(substring!=nil) %>   
+	<% if(matchingPics!=nil && matchingPics.length>0) %>
+	 Pictures which have the substring "<%= @substr %>" in a picture tag or a comment
+	<br /> 
+	    <table>
+		<%matchingPics.each_slice(4) do |slice| %>
+			<tr class="celebtable">
+				<% slice.each do |myPic| %>
+			  	<td class = "element">
+					<a href = "/pics/user/<%=myPic.user.id%>/#<%=myPic.id%>"><img class = "search" src="/images/<%=myPic.file_name%>" alt = "<%=myPic.file_name%>"/></a>
+					<p><%=myPic.user.first_name%>  <%=myPic.user.last_name%>, photo_id: <%=myPic.id%><p>
+				</td>
+				<%end%>
+			</tr>
+		<%end%>
+		</table>
+	<% else %>
+		<p>No matching pictures found with the specified query string.</p>
+	<% end %>
+
+<% else %>
+	Couldn't fetch values from "substring" query...	
+<% end %>
+</p>
+</div>

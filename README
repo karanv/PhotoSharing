@@ -1,0 +1,23 @@
+Reusability of the components: 
+
+1. The Ajax Script takes the following parameters: search_text_box, rul, param_key, target. 
+
+- search_text_box: This is the id of the text box where the user enters the search term. 
+- url: the url from where we should fetch data. 
+- param_key: this is the value which is passed into the search text box. 
+- target: refers to the div where we should display the result. 
+
+The script is totally reusable because we could use to serach, text, images or anyother value. It is independant of the application where it is used, whether it is rails or a simple HTML applicaiton which is querying some third party server for data. 
+
+it searches for the query string on the URL on keyup and greys out while the search is loading. 
+
+
+2. _find_photos.html.erb (PARTIAL)
+
+It takes the argument, substrng and matchingpics. 
+
+substring: is the string which is used to search in the model. 
+matchingPics: is the resultant array of matching pics.
+This is another resuable component which could be used to display images specific to a rails app. So when the controller has information about the images that satisfy the search criteria, it calls this partial which displays the images. 
+
+

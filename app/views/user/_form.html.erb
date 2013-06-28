@@ -1,0 +1,26 @@
+<div class = "login_block">
+<% if flash[:notice] %>
+ 		<%= flash[:notice] %>
+		<br />
+		<br />
+<% end %>
+
+<%= form_for(:User, :url => {:action => 'post_login'}) do |user_form| %>
+
+  <div class="field">
+    <%= user_form.label :login %><br />
+    <%= user_form.text_field :login %>
+  </div>
+
+  <div class="field">
+    <%= user_form.label :password %><br />
+    <%= user_form.password_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag 'Login'  %>
+	<a href="/user/register">    Register </a>
+  </div>
+
+<% end %>
+</div>

@@ -1,0 +1,20 @@
+<% if flash[:notice] %>
+ 		<%= flash[:notice] %>
+		<br />
+		<br />
+<% end %>
+<%= form_for(:thisComment, :url => {:action => "post_comment/#{@photo.id}"}) do |comment_form| %>
+ 	<div class="field">
+    	<%= comment_form.label :comment %><br />
+    	<%= comment_form.text_area :comment %>
+  	</div>
+	<div>
+		<%= comment_form.hidden_field :photo_id, :value => @photo.id %>
+		<%= comment_form.hidden_field :user_id, :value => session[:logged_in]%>
+		<%= comment_form.hidden_field :date_time, :value => Time.now.utc %>
+	</div>	
+	
+  	<div class="actions">
+    	<%= submit_tag 'Submit' %>
+  	</div>
+<% end %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 
+  user_id: 1
+  date_time: 2012-05-01 00:17:04
+  file_name: MyString
+
+two:
+  id: 
+  user_id: 1
+  date_time: 2012-05-01 00:17:04
+  file_name: MyString
